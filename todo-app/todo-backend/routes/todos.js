@@ -33,7 +33,7 @@ singleRouter.delete('/', async (req, res) => {
   res.sendStatus(200);
 });
 
-/* GET todo. */
+/* GET one todo from list of todo's */
 singleRouter.get('/', async (req, res) => {
   const todo = req.todo;
   if (todo) {
@@ -44,6 +44,15 @@ singleRouter.get('/', async (req, res) => {
 
 /* PUT todo. */
 singleRouter.put('/', async (req, res) => {
+  const todo = req.body;
+/*  console.log("The object for update", todo);  */
+
+  const updatedTodo = await Todo.findByIdAndUpdate(
+    req.todo._id,
+    { ...todo},
+    { new: true, useFindAndModify: false} 
+  );
+  if (updatedTodo) { return res.json(updatedTodo) };
   res.sendStatus(405); // Implement this
 });
 
