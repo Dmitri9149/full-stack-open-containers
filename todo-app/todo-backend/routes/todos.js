@@ -9,11 +9,6 @@ router.get('/', async (_, res) => {
   res.send(todos);
 });
 
-router.get('/statistics', async (_, res) => {
-  const count = await redis.getAsync('added_todos');
-
-  return res.json({ added_todos: Number(count) || 0 });
-});
 
 /* POST todo to listing. */
 router.post('/', async (req, res) => {
@@ -26,7 +21,6 @@ router.post('/', async (req, res) => {
     const count = Number(await redis.getAsync("added_todos"));
     return redis.setAsync("added_todos",  count + 1); 
   }
-
   countTodos();
 
   res.send(todo);
