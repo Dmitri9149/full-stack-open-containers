@@ -64,3 +64,4 @@ typings/
 # mongo db data
 /data/db 
 mongo_data
+*.http
