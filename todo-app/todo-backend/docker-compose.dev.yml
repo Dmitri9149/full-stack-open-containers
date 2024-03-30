@@ -19,5 +19,3 @@ services:
     command: ['redis-server', '--appendonly', 'yes'] # Overwrite the CMD
     volumes: # Declare the volume
       - ./redis_data:/data
-    environment:
-      REDIS_PASSWORD: mypassword 
