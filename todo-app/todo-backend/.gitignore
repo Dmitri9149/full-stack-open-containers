@@ -64,4 +64,10 @@ typings/
 # mongo db data
 /data/db 
 mongo_data
+
+# files for REST client tests
 *.http
+
+# data for redis db 
+redis_data
+
