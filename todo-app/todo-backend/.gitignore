@@ -71,3 +71,4 @@ mongo_data
 # data for redis db 
 redis_data
 
+.env
