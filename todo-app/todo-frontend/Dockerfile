@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-ENV REACT_APP_BACKEND_URL=http://localhost:8080/app
+ENV VITE_BACKEND_URL=http://localhost:3000
 
 RUN npm ci
 
