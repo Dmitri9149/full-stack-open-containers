@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, getByText } from '@testing-library/react'
 import { screen } from '@testing-library/react'
 import Todo from '../Todos/Todo.jsx'
 
@@ -8,12 +8,14 @@ test("check setups", () => {
 
 test("simplest test for rendering todo correctly", () => {
   const todo = {
-    text: "Test todo",
+    text: "Testing todo",
     done: false,
   }
   const deleteTodo = vi.fn()
   const completeTodo = vi.fn()
 
   render(<Todo todo={todo} deleteTodo={deleteTodo} completeTodo={completeTodo} />)
-  expect(screen.getByText("Test todo")).toBeInTheDocument()
+  expect(screen.getByText("Testing todo")).toBeInTheDocument()
+  expect(screen.getByText("This todo is not done")).toBeInTheDocument()
+  expect(screen.getByText("Testing todo")).toBeDefined()
 })
