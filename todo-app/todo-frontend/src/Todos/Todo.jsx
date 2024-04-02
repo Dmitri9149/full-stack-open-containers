@@ -1,35 +1,47 @@
 import React from "react";
 
 const Todo = ({ todo, deleteTodo, completeTodo }) => {
+  const onClickDelete = () => {
+    deleteTodo(todo);
+  }
 
-  const done = (
-    <div>
-      <span>Is done</span>
+  const onClickComplete = () => {
+    completeTodo(todo);
+  }
+
+  const doneInfo = (
+    <>
+      <span style={{color: "#1f871f"}}>This todo is done</span>
       <span>
-        <button onClick = {deleteTodo()}>Delete</button> 
+        <button onClick={onClickDelete}> Delete </button>
       </span>
-    </div>
+    </>
   )
 
-  const notDone = (
-    <div>
-      <span>Not done yet</span>
-        <button onClick = {completeTodo()}>Set as done</button>
-        <button onClick = {deleteTodo()}>Delete</button>
-    </div>
+  const notDoneInfo = (
+    <>
+      <span style={{color:" maroon"}}>This todo is not done</span>
+      <span>
+        <button onClick={onClickDelete}> Delete </button>
+        <button onClick={onClickComplete}> Set as done </button>
+      </span>
+    </>
   )
 
   return (
     <div
-      style = {{
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        maxWidth: '70%',
-        margin: 'auto'
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        maxWidth: "80%",
+        margin: "auto",
+        textAlign:"left"
       }}
     >
-      <span>{todo.text}</span>
-      <span>{todo.done ? done : notDone}</span>
+      <span style = {{width: "50%", backgroundColor: "#f8f476", color: "#022f02",}}>
+        {todo.text}
+      </span>
+      {todo.done ? doneInfo : notDoneInfo}
     </div>
   )
 }
