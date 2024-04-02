@@ -35,7 +35,8 @@ const Todo = ({ todo, deleteTodo, completeTodo }) => {
         justifyContent: "space-between",
         maxWidth: "80%",
         margin: "auto",
-        textAlign:"left"
+        textAlign:"left",
+        backgroundColor: "#e2f9bd"
       }}
     >
       <span style = {{width: "50%", backgroundColor: "#f8f476", color: "#022f02",}}>
