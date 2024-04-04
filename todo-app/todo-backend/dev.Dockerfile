@@ -4,10 +4,11 @@ WORKDIR /usr/src/app
 
 COPY --chown=node:node . .
 
-RUN npm install
+# use install ( not ci) in the dev mode
+RUN npm install 
 
 ENV DEBUG=todo-backend:*
 
-
 USER node
+
 CMD npm run dev
