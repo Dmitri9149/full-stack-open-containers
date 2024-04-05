@@ -38,6 +38,16 @@ services:
         - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
       container_name: todo-backend-dev
 
+    nginx:
+      image: nginx:1.20.1
+      volumes:
+        - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+      ports:
+        - 8080:80
+      container_name: reverse-proxy-backend
+      depends_on:
+        - server  # wait for the backend container to be started
+
 volumes: 
   mongo_data: 
   redis_data: 
