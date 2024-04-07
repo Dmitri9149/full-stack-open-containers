@@ -2,16 +2,16 @@ services:
   app:
     image: todo-frontend-dev
     build:
-      context: ./todo-frontend # The context will pick this directory as the "build context"
-      dockerfile: dev.Dockerfile # This will simply tell which dockerfile to read
+      context: ./todo-frontend 
+      dockerfile: dev.Dockerfile 
     volumes:
-      - ./todo-frontend:/usr/src/app # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
-#    environment: 
-#      - VITE_BACKEND_URL='http://localhost:8080/api'
-#      - PORT=5000
-    ports:
-      - 5000:5173
-    container_name: todo-frontend-dev # This will name the container todo-frontend-dev
+      - ./todo-frontend:/usr/src/app 
+    environment: 
+      - VITE_BACKEND_URL=http://localhost:8080/api
+      - PORT=3020
+#    ports:
+#      - 5000:5173
+    container_name: todo-frontend-dev 
 
   mongo:
     image: mongo
