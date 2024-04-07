@@ -24,7 +24,7 @@ services:
 
   redis:
     image: redis
-    command: ['redis-server', '--appendonly', 'yes'] # Overwrite the CMD
+    command: ['redis-server', '--appendonly', 'yes'] 
     volumes:
       - todo-backend_redis_data:/data
     container_name: redis
