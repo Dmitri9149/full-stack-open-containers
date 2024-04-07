@@ -67,10 +67,8 @@ services:
 volumes:
   todo-backend_mongo_data:
     external: true
-#      name: todo-backend_mongo_data
   todo-backend_redis_data: 
     external: true 
-#      name: todo-backend_redis_data
 
 
 
