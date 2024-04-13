@@ -56,3 +56,5 @@ services:
 volumes:
   mongo_data_prod:
   redis_data_prod: 
+
+# ex 12_20
