@@ -59,5 +59,7 @@ volumes:
   mongo_data_dev:
   redis_data_dev:  
 
+# ex 12_19
+
 
 
