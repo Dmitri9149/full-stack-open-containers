@@ -18,6 +18,7 @@ COPY . .
 RUN npm ci
 
 ENV VITE_BACKEND_URL=http://localhost:8080/api
+# ENV VITE_BACKEND_URL='http://localhost:3000'
 
 RUN npm run build
 
