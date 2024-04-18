@@ -43,6 +43,6 @@ services:
     depends_on:
       - app
       - server
-
+      
 volumes:
   mongo_data_phonebook_prod:
